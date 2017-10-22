@@ -14,8 +14,12 @@ Add to hosts file:
 127.0.0.1 m2.localhost
 
 Magento setup environment variables: setup.env
+
 Magento base URL: m2.localhost:8000
+
 Magento CLI: docker-compose exec phpfpm ./bin/magento [magento command]
-Magento admin URL: docker exec -it PHPCONTAINERID head -5 app/etc/env.php => This should give you the first 5 lines of app/etc/env.php, the 5th line being the admin url.
+
+Magento admin URL: 
+docker exec -it PHPCONTAINERID head -5 app/etc/env.php => This should give you the first 5 lines of app/etc/env.php, the 5th line being the admin url.
 
 Official Documentation: https://github.com/mageinferno/magento2-docker-compose
