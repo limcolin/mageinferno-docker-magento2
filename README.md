@@ -4,18 +4,17 @@ Steps to setup development environment using Mage Inferno Magento 2 Docker Image
 Download, unzip to htdocs/
 https://github.com/mageinferno/magento2-docker-compose
 
+To avoid the issue of localhost not loading due to browsers (e.g. chrome) not saving cookies for URLs with less than 2 dots (.) in them depicted here: https://github.com/magento/magento2/issues/2614 || https://alankent.me/2015/04/25/use-of-localhost-when-installing-magento-2-quick-note/
+
+Do this:
+In the Magento setup environment variables: setup.env, change:
+Magento base URL to: 192.168.99.100:8000
+
 In CLI, cd into unzipped folder and do:
 docker-compose run --rm setup
 
 then:
 docker-compose up -d
-
-Add to hosts file:
-127.0.0.1 m2.localhost
-
-Magento setup environment variables: setup.env
-
-Magento base URL: m2.localhost:8000
 
 Magento CLI: docker-compose exec phpfpm ./bin/magento [magento command]
 
